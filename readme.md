@@ -7,7 +7,7 @@ Por otra parte se aplica el uso de Modelos en Django y uso de bases de datos rel
 Además el estudiante aprenderá el manejo de Django desde los templates, views, models, así como la generación de API REST usando Django Rest Framework
 
 ## Datos del estudiante
-- **Nombre:** José Miguel Moya
+- **Nombre:** José Miguel Moya Miranda
 - **Carrera:** Ingenieria en Software
 
 ## Objetivos 
