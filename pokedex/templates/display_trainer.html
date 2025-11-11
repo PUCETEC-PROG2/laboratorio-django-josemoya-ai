@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3><strong>{{ trainer | capfirst }}</strong></h3>
+    <p>Detalles del entrenador</p>
+    <ul>
+        <li>Nivel: {{ trainer.level }}</li>
+        <li>Fecha de nacimiento: {{ trainer.birth_date }}</li>
+    </ul>
+{% endblock content %}
