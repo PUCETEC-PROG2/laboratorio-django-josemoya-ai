@@ -2,7 +2,12 @@
 {% block content %}
 <h3>Entrenadores</h3>
 {% if user.is_authenticated %}
-    <a href="{% url 'pokedex:add_trainer' %}">Añadir entrenador</a>
+<div class="text-right p-3">
+    <a class="btn btn-success" href="{% url 'pokedex:add_trainer' %}">
+        <i class="fa-solid fa-plus"></i>
+        Añadir entrenador
+    </a>
+</div>
 {% endif %}
 <div class="row">
     {% for trainer in trainers %}   
@@ -10,15 +15,16 @@
         <br>
         <div class="card" style="width: 100%;">
             <div class="card-body">
-                <h5 class="card-title">{{ trainer.name }}</h5>
-                <a class="btn btn-primary" href="{% url "pokedex:trainer" trainer.id %}" role="button">
+                <h5 class="card-title">{{ trainer | capfirst }}</h5>
+                <p class="card-text">Nivel: {{ trainer.level }}</p>
+                <a class="btn btn-primary" href="{% url "pokedex:trainer_details" trainer.id %}" role="button">
                     <i class="fa-solid fa-eye"></i>
                 </a>
                 {% if user.is_authenticated %}
-                    <a href="edit_trainer/{{trainer.id}}" class="btn btn-primary" role="button">
+                    <a href="{% url "pokedex:edit_trainer" trainer.id %}" class="btn btn-primary" role="button">
                         <i class="fa-solid fa-pencil"></i>
                     </a>
-                    <a href="delete_trainer/{{trainer.id}}" class="btn btn-danger" role="button">
+                    <a href="{% url "pokedex:delete_trainer" trainer.id %}" class="btn btn-danger" role="button">
                         <i class="fa-solid fa-trash"></i>
                     </a>
                 {% endif %}
